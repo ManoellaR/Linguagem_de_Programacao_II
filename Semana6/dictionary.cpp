@@ -8,6 +8,7 @@ bool Dictionary::LoadDictionary(string path){
     Initialize();
 
     ifstream filereader;
+    filereader.open(path);
     if(filereader.is_open() == false){
         return false;
     }
@@ -52,5 +53,23 @@ bool Dictionary::RemoveWord(size_t indexbegin, size_t indexend){
         return false;
     }
     m_listofwords.erase(m_listofwords.begin()+indexbegin, m_listofwords.begin()+indexend);
+    return true;
+}
+
+void Dictionary::GetName(string name){
+    m_name == name;
+}
+
+//ARRUAMR!!!!
+bool SearchSubstring(const vector < Dictionary > &myListOfDicts, string query){
+    for(size_t i=0; i < myListOfDicts.size(); i++){
+        for (size_t j = 0; j < myListOfDicts.at(i).m_listofwords.size(); j++){
+            size_t pos = myListOfDicts.at(i).m_listofwords.at(j).find(query);
+
+            if(pos < myListOfDicts.at(i).m_listofwords.at(j).length()){
+                cout << myListOfDicts.at(i).m_listofwords.at(j) << endl;
+            }
+        }
+    }
     return true;
 }
