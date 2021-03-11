@@ -1,5 +1,15 @@
 #include "dictionary.hpp"
 
+Dictionary::Dictionary(){
+    cout << "Hello, I'm a constructor method" << endl;
+    m_path = " ";
+}
+
+Dictionary::~Dictionary(){
+    cout << "Hello I'm a destructor method" << endl;
+    m_listofwords.clear();
+}
+
 void Dictionary::Initialize()
 {
     m_listofwords.clear();
@@ -21,6 +31,8 @@ bool Dictionary::LoadDictionary(string path)
     }        
     m_listofwords.erase(m_listofwords.begin()+0);     
     filereader.close();
+
+    m_path = path;
    
     return true;
 }

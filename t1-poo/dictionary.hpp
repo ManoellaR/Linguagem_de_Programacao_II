@@ -12,12 +12,17 @@ class Dictionary
 //atributos
 private:
     vector<string> m_listofwords;
+    string m_path;
     
 //methods
 private:
     void Initialize();
     
 public:
+    //constructors and destructors
+    Dictionary();
+    ~Dictionary();
+
     //load a dictionary file
     bool LoadDictionary(string path);
 
