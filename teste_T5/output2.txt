@@ -1,0 +1,10 @@
+Object #0 is circle -> 95.03
+Object #1 is circle -> 1110.36
+Object #2 is triangle -> -nan
+Object #3 is triangle -> 13.54
+Object #4 is sphere -> 1870.38
+Object #5 is sphere -> 2.54
+Object #6 is cube -> 116.16
+Object #7 is cube -> 6376.56
+Object #8 is tetrahedron -> 36.04
+Object #9 is tetrahedron -> -nan
