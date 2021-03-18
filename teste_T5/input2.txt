@@ -3,7 +3,9 @@ circle
 circle
 18.8
 triangle
-10, 11.5, 21.66
+10
+11.5
+21.66
 triangle
 3.3,6.8
 0.5,0.5
