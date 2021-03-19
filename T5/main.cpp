@@ -1,7 +1,6 @@
 #include "GenericElement.hpp" 
 #include "Shapes.hpp"
 #include <vector>
-#include <sstream>
 
 vector<string> split(const string& s, char delimiter)
 {

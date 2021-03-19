@@ -2,7 +2,8 @@
 #define GENERIC_HPP
 
 #include "Shapes.hpp"
-#define NDEBUG 1 // dev = 1 release = 0
+
+using namespace std;
 
 enum DataType {tnone, tcircle, tsquare, ttriangle, tsphere, ttetrahedron, tcube, tpoint2d, tpoint3d};
 
@@ -12,6 +13,7 @@ private:
     DataType m_dataType;
     
 public:
+    GenericElement(){};
     GenericElement(Circle v)      { m_data = new Circle(v);      m_dataType=tcircle; };
     GenericElement(Square v)      { m_data = new Square(v);      m_dataType=tsquare; };
     GenericElement(Triangle v)    { m_data = new Triangle(v);    m_dataType=ttriangle; };
@@ -20,7 +22,6 @@ public:
     GenericElement(Cube v)        { m_data = new Cube(v);        m_dataType=tcube; };
 
     ~GenericElement() {
-        if(m_dataType == tnone) delete m_data;
         if(m_dataType == tcircle) delete ((Circle *)m_data);
         if(m_dataType == tsquare) delete ((Square *)m_data);
         if(m_dataType == ttriangle) delete ((Triangle *)m_data);

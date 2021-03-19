@@ -1,5 +1,5 @@
-#ifndef SHAPES_CPP
-#define SHAPES_CPP
+#ifndef SHAPES_HPP
+#define SHAPES_HPP
 
 #include <iostream>
 #include <sstream>
