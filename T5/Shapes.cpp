@@ -14,14 +14,14 @@ float Triangle::CalcArea(){
 }
 
 float Tetrahedron::CalcArea(){
-    float m_e1, m_e2, m_e3, m_e4, m_e5, m_e6, s1, s2, s3, A1, A2, A3;
+    float m_e1, m_e2, m_e3, m_e4, m_e5, m_e6, s1, s2, s3, s4, A1, A2, A3, A4;
     
-    m_e3 = sqrt((m_p1.m_x - m_p2.m_x)*(m_p1.m_x - m_p2.m_x) + (m_p1.m_y - m_p2.m_y)*(m_p1.m_y - m_p2.m_y));
-    m_e2 = sqrt((m_p1.m_x - m_p3.m_x)*(m_p1.m_x - m_p3.m_x) + (m_p1.m_y - m_p3.m_y)*(m_p1.m_y - m_p3.m_y));
-    m_e1 = sqrt((m_p2.m_x - m_p3.m_x)*(m_p2.m_x - m_p3.m_x) + (m_p2.m_y - m_p3.m_y)*(m_p2.m_y - m_p3.m_y));
-    m_e4 = sqrt((m_p1.m_x - m_p4.m_x)*(m_p1.m_x - m_p4.m_x) + (m_p1.m_y - m_p4.m_y)*(m_p1.m_y - m_p4.m_y));
-    m_e5 = sqrt((m_p2.m_x - m_p4.m_x)*(m_p2.m_x - m_p4.m_x) + (m_p2.m_y - m_p4.m_y)*(m_p2.m_y - m_p4.m_y));
-    m_e6 = sqrt((m_p3.m_x - m_p4.m_x)*(m_p3.m_x - m_p4.m_x) + (m_p3.m_y - m_p4.m_y)*(m_p3.m_y - m_p4.m_y));
+    m_e3 = sqrt((m_p1.m_x - m_p2.m_x)*(m_p1.m_x - m_p2.m_x) + (m_p1.m_y - m_p2.m_y)*(m_p1.m_y - m_p2.m_y) + (m_p1.m_z - m_p2.m_z)*(m_p1.m_z - m_p2.m_z));
+    m_e2 = sqrt((m_p1.m_x - m_p3.m_x)*(m_p1.m_x - m_p3.m_x) + (m_p1.m_y - m_p3.m_y)*(m_p1.m_y - m_p3.m_y) + (m_p1.m_z - m_p3.m_z)*(m_p1.m_z - m_p3.m_z));
+    m_e1 = sqrt((m_p2.m_x - m_p3.m_x)*(m_p2.m_x - m_p3.m_x) + (m_p2.m_y - m_p3.m_y)*(m_p2.m_y - m_p3.m_y) + (m_p2.m_z - m_p3.m_z)*(m_p2.m_z - m_p3.m_z));
+    m_e4 = sqrt((m_p1.m_x - m_p4.m_x)*(m_p1.m_x - m_p4.m_x) + (m_p1.m_y - m_p4.m_y)*(m_p1.m_y - m_p4.m_y) + (m_p1.m_z - m_p4.m_z)*(m_p1.m_z - m_p4.m_z));
+    m_e5 = sqrt((m_p2.m_x - m_p4.m_x)*(m_p2.m_x - m_p4.m_x) + (m_p2.m_y - m_p4.m_y)*(m_p2.m_y - m_p4.m_y) + (m_p2.m_z - m_p4.m_z)*(m_p2.m_z - m_p4.m_z));
+    m_e6 = sqrt((m_p3.m_x - m_p4.m_x)*(m_p3.m_x - m_p4.m_x) + (m_p3.m_y - m_p4.m_y)*(m_p3.m_y - m_p4.m_y) + (m_p3.m_z - m_p4.m_z)*(m_p3.m_z - m_p4.m_z));
 
     s1 = (m_e1 + m_e2 + m_e3)/2;
     A1 = sqrt(s1*(s1-m_e1)*(s1-m_e2)*(s1-m_e3));
@@ -29,6 +29,8 @@ float Tetrahedron::CalcArea(){
     A2 = sqrt(s2*(s2-m_e3)*(s2-m_e4)*(s2-m_e5));
     s3 = (m_e1 + m_e5 + m_e6)/2;
     A3 = sqrt(s3*(s3-m_e1)*(s3-m_e5)*(s3-m_e6));
+    s4 = (m_e2 + m_e4 + m_e6)/2;
+    A4 = sqrt(s4*(s4-m_e2)*(s4-m_e4)*(s4-m_e6));
 
-    return (A1 + A2 + A3);
+    return (A1 + A2 + A3 + A4);
 }
