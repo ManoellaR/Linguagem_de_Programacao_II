@@ -1,6 +1,6 @@
 #ifndef SHAPES_HPP
 #define SHAPES_HPP
-#define NDEBUG 1 // dev = 1 release = 0
+#define NDEBUG 0 // dev = 1 release = 0
 
 #include <iostream>
 #include <sstream>
@@ -10,24 +10,21 @@
 
 using namespace std;
 
-class Point2d
-{
+class Point2d{
 public:
     float m_x, m_y;
     Point2d() : m_x(0), m_y(0){};
     Point2d(float x, float y) : m_x(x), m_y(y){};
 };
 
-class Point3d
-{
+class Point3d{
 public:
     float m_x, m_y, m_z;
     Point3d() : m_x(0), m_y(0), m_z(0){};
     Point3d(float x, float y, float z) : m_x(x), m_y(y), m_z(z){};
 };
 
-class Circle
-{
+class Circle{
 private:
     float m_ratio;
 
@@ -39,8 +36,7 @@ public:
     float CalcArea() const { return (M_PI * m_ratio * m_ratio); };
 };
 
-class Square
-{
+class Square{
 private:
     float m_edge;
 
@@ -52,8 +48,7 @@ public:
     float CalcArea() const { return (m_edge * m_edge); };
 };
 
-class Triangle
-{
+class Triangle{
 private:
     float m_e1, m_e2, m_e3;
 
@@ -66,8 +61,7 @@ public:
     float CalcArea();
 };
 
-class Sphere
-{
+class Sphere{
 private:
     float m_ratio;
 
@@ -79,8 +73,7 @@ public:
     float CalcArea() const { return (4 * M_PI * m_ratio * m_ratio); };
 };
 
-class Tetrahedron
-{
+class Tetrahedron{
 private:
     Point3d m_p1, m_p2, m_p3, m_p4;
 
@@ -92,8 +85,7 @@ public:
     float CalcArea();
 };
 
-class Cube
-{
+class Cube{
 private:
     float m_edge;
 

@@ -2,13 +2,11 @@
 #include "Shapes.hpp"
 #include <vector>
 
-vector<string> split(const string& s, char delimiter)
-{
+vector<string> split(const string& s, char delimiter){
    vector<string> tokens;
    string token;
    istringstream tokenStream(s);
-   while (getline(tokenStream, token, delimiter))
-   {
+   while (getline(tokenStream, token, delimiter)){
       tokens.push_back(token);
    }
    return tokens;
@@ -101,8 +99,7 @@ int main(){
 
     filereader.close();
 
-    for(size_t i=0; i< myListOfElements.size(); i++)
-    {   
+    for(size_t i=0; i< myListOfElements.size(); i++){   
         cout << "Object #" << i << " is " << myListOfElements.at(i)->ShowInfo() << endl;
         delete myListOfElements.at(i);
     }
