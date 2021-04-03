@@ -6,6 +6,8 @@
         "iomanip": "cpp",
         "fstream": "cpp",
         "new": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp"
     }
 }
