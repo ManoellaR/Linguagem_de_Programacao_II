@@ -154,19 +154,19 @@ bool BulletJournal::SaveBulletJournal(){
     for(size_t i=0; i<m_futurelog.size(); i++){
         fileWriter << "F" << endl;
         fileWriter << m_futurelog[i].ShowDate() << endl;
-        fileWriter << m_futurelog[i].GetStatus() <<endl;
+        fileWriter << m_futurelog[i].GetStatus() << endl;
         fileWriter << m_futurelog[i].GetEntry() << endl;
     }
     for(size_t i=0; i<m_monthlylog.size(); i++){
         fileWriter << "M" << endl;
         fileWriter << m_monthlylog[i].ShowDate() << endl;
-        fileWriter << m_futurelog[i].GetStatus() <<endl;
+        fileWriter << m_futurelog[i].GetStatus() << endl;
         fileWriter << m_monthlylog[i].GetEntry() << endl;
     }
     for(size_t i=0; i<m_dailylog.size(); i++){
         fileWriter << "D" << endl;
         fileWriter << m_dailylog[i].ShowDate() << endl;
-        fileWriter << m_futurelog[i].GetStatus() <<endl;
+        fileWriter << m_futurelog[i].GetStatus() << endl;
         fileWriter << m_dailylog[i].GetEntry() << endl;
     }
     fileWriter.close();

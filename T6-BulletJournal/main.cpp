@@ -40,12 +40,13 @@ int main(){
             cout << "1. Future Log" << endl;
             cout << "2. Monthly Log" << endl;
             cout << "3. Daily Log" << endl;
-            cout << "Enter a collection: " << endl;
+            cout << "Enter a collection number: ";
             cin >> ch;
             cout << "Enter the entry number: ";
             cin >> i;
             cout << "Enter the new status (task, completed, migrated, scheduled, event, note or deleted): ";
-            cin >> newstatus;
+            cin.ignore();
+            getline(cin, newstatus);
 
             if(ch == '1') mybulletjournal.SetFutureLogStatus(i, newstatus);
             if(ch == '2') mybulletjournal.SetMonthlyLogStatus(i, newstatus);
@@ -61,14 +62,15 @@ int main(){
             cout << "1. Future Log" << endl;
             cout << "2. Monthly Log" << endl;
             cout << "3. Daily Log" << endl;
-            cout << "Enter a collection: " << endl;
+            cout << "Enter a collection number: ";
             cin >> ch;
             cout << "Enter the date that the entry is for(dd/mm/yyyy): ";
             cin >> datestr;
             cout << "Enter the status(task, completed, migrated, scheduled, event, note or deleted): ";
-            cin >> entrystatus;
+            getline(cin, entrystatus);
             cout << "Type your new entry: ";
-            cin >> entry;
+            cin.ignore();
+            getline(cin, entry);
 
             JournalEntry newentry;
             newentry.SetDate(datestr);
