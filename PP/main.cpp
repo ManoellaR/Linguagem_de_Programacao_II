@@ -4,6 +4,8 @@ int main(){
     EstruturaDados Estrutura;
     Fila*  f = (Fila*)  &Estrutura;
     Pilha* p = (Pilha*) &Estrutura;
+    char ch;
+    int num;
 
     if(NDEBUG) cout << "NUMBER STORAGE SYSTEM:" << endl;
     if(NDEBUG) cout << "Insira uma opção" << endl;
@@ -15,9 +17,6 @@ int main(){
     if(NDEBUG) cout << "6. Sair do Sistema" << endl;
 
     for(;;){
-        char ch;
-        int num;
-
         cin >> ch;
         if(ch == '1'){
             if(NDEBUG) cout << "Digite o numero que deseja inserir" << endl;
