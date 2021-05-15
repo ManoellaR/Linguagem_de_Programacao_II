@@ -25,7 +25,6 @@ public:
     void keyPressEvent(QKeyEvent * event);
     void keyReleaseEvent(QKeyEvent * event);
     void shoot();
-    void rotate();
 public slots:
     void autofocus();
     void move();

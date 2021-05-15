@@ -10,15 +10,17 @@
 class Game : public QGraphicsView
 {
 public:
-    qreal lineAnglePressed;
-    QTimer * lineTimer;
+    double lineAngle;
+    double lineAnglePressed;
     Player * player;
+    QTimer * spawnTimer;
     QGraphicsScene * scene;
     Game();
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
-    //void drawForeground(QPainter* painter, const QRectF& rect);
+public slots:
+    void zombieSpawn();
 };
 
 #endif // GAME_HPP

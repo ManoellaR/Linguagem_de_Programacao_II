@@ -13,13 +13,15 @@ SOURCES += \
     game.cpp \
     main.cpp \
     menu.cpp \
-    player.cpp
+    player.cpp \
+    zombie.cpp
 
 HEADERS += \
     bullet.hpp \
     game.hpp \
     menu.hpp \
-    player.hpp
+    player.hpp \
+    zombie.hpp
 
 FORMS += \
     menu.ui

@@ -68,11 +68,6 @@ void Player::shoot()
         bullet->setPos(x(),y());
         scene()->addItem(bullet);
         shooted = true;
-        QTimer::singleShot(450, []{game->player->shooted = false;});
+        QTimer::singleShot(225, []{game->player->shooted = false;});
     }
-}
-
-void Player::rotate()
-{
-
 }

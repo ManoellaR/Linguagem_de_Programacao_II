@@ -2,6 +2,7 @@
 #include <QPainter>
 #include <cmath>
 #include <QDebug>
+#include "zombie.hpp"
 
 Game::Game()
 {
@@ -19,19 +20,16 @@ Game::Game()
     player->setPos(640,360);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     scene->addItem(player);
-
-    lineTimer = new QTimer;
-    connect(lineTimer, SIGNAL(timeout()), this, SLOT(mousePressEvent(QMouseEvent*event)));
-    lineTimer->start(17);
+    Zombie* zombie = new Zombie();
+    scene->addItem(zombie);
 }
 
 void Game::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton){
         player->shooting = true;
-        lineAnglePressed = atan2(event->pos().y() - player->pos().y(), event->pos().x() - player->pos().x()) * 180 / M_PI;
-        qDebug()<<"atan2: " << lineAnglePressed;
-        qDebug()<<"mouse pos: " << event->pos();
+        QLineF line(player->pos().x(), player->pos().y(), event->pos().x(), event->pos().y());
+        lineAnglePressed = -1 * line.angle();
     }
 }
 
@@ -42,12 +40,12 @@ void Game::mouseReleaseEvent(QMouseEvent *event)
 
 void Game::mouseMoveEvent(QMouseEvent *event)
 {
-    qreal lineAngle = atan2(event->pos().y() - player->pos().y(), event->pos().x() - player->pos().x()) * 180 / M_PI;
+    QLineF line(player->pos().x(), player->pos().y(), event->pos().x(), event->pos().y());
+    lineAngle = -1 * line.angle();
     player->setRotation(lineAngle);
 }
-/*
-void Game::drawForeground(QPainter* painter, const QRectF& rect) {
-    painter->setPen(QPen(Qt::black, 1));
-    painter->drawLine(m_MousePos, player->pos());
+
+void Game::zombieSpawn()
+{
+
 }
-*/
