@@ -1,11 +1,17 @@
+release/ammocount.o
+release/ammunition.o
 release/bullet.o
 release/game.o
+release/health.o
+release/heart.o
 release/main.o
 release/menu.o
 release/player.o
 release/zombie.o
 release/qrc_Resources.o
+release/moc_ammocount.o
 release/moc_bullet.o
+release/moc_health.o
 release/moc_menu.o
 release/moc_player.o
 release/moc_zombie.o

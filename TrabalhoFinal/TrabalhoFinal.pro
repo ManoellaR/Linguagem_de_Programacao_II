@@ -9,16 +9,24 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ammocount.cpp \
+    ammunition.cpp \
     bullet.cpp \
     game.cpp \
+    health.cpp \
+    heart.cpp \
     main.cpp \
     menu.cpp \
     player.cpp \
     zombie.cpp
 
 HEADERS += \
+    ammocount.hpp \
+    ammunition.hpp \
     bullet.hpp \
     game.hpp \
+    health.hpp \
+    heart.hpp \
     menu.hpp \
     player.hpp \
     zombie.hpp

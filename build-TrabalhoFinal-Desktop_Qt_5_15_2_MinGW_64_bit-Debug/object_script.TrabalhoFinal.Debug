@@ -1,11 +1,17 @@
+debug/ammocount.o
+debug/ammunition.o
 debug/bullet.o
 debug/game.o
+debug/health.o
+debug/heart.o
 debug/main.o
 debug/menu.o
 debug/player.o
 debug/zombie.o
 debug/qrc_Resources.o
+debug/moc_ammocount.o
 debug/moc_bullet.o
+debug/moc_health.o
 debug/moc_menu.o
 debug/moc_player.o
 debug/moc_zombie.o

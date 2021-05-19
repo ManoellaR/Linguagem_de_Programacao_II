@@ -6,6 +6,8 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include "player.hpp"
+#include "health.hpp"
+#include "ammocount.hpp"
 
 class Game : public QGraphicsView
 {
@@ -13,14 +15,14 @@ public:
     double lineAngle;
     double lineAnglePressed;
     Player * player;
+    Health * health;
+    AmmoCount * ammoCount;
     QTimer * spawnTimer;
     QGraphicsScene * scene;
     Game();
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
-public slots:
-    void zombieSpawn();
 };
 
 #endif // GAME_HPP

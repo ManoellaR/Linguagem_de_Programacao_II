@@ -10,7 +10,7 @@ extern Game * game;
 
 Bullet::Bullet()
 {
-    setRect(0,0,50,10);
+    setPixmap(QPixmap(":/images/Bullet.png"));
     Angle = game->lineAngle;
     setRotation(Angle);
     bulletTimer = new QTimer();
@@ -33,9 +33,9 @@ void Bullet::move()
 
     setPos(x() + (qCos(qDegreesToRadians(Angle))*10), y() + (qSin(qDegreesToRadians(Angle))*10));
 
-    if(pos().x() < -10 || pos().x() > 1290)
+    if(pos().x() < 0 || pos().x() > 1280)
     {
-        if(pos().y() < -10 || pos().y() > 730)
+        if(pos().y() < 0 || pos().y() > 720)
         {
             scene()->removeItem(this);
             delete this;
