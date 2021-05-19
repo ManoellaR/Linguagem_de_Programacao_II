@@ -26,6 +26,11 @@ void Health::decrease()
     }
     if(heartCount == 0){
         game->player->action = "death";
+        game->spawnTimer->stop();
+        game->hide();
+        heartCount = 3;
+        update();
+        game->player->action = "run";
     }
 }
 

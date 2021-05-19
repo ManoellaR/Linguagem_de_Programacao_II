@@ -25,7 +25,7 @@ Game::Game()
     scene->addItem(health);
 
     ammoCount = new AmmoCount();
-    ammoCount->setPos(ammoCount->x(), ammoCount->y()+25);
+    ammoCount->setPos(ammoCount->x()+160, ammoCount->y());
     scene->addItem(ammoCount);
 
     spawnTimer = new QTimer();

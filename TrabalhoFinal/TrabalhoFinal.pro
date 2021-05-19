@@ -13,6 +13,7 @@ SOURCES += \
     ammunition.cpp \
     bullet.cpp \
     game.cpp \
+    gameover.cpp \
     health.cpp \
     heart.cpp \
     main.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     ammunition.hpp \
     bullet.hpp \
     game.hpp \
+    gameover.hpp \
     health.hpp \
     heart.hpp \
     menu.hpp \
@@ -32,6 +34,7 @@ HEADERS += \
     zombie.hpp
 
 FORMS += \
+    gameover.ui \
     menu.ui
 
 # Default rules for deployment.

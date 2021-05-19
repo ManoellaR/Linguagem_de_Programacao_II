@@ -8,7 +8,11 @@ Menu::Menu(QWidget *parent)
     , ui(new Ui::Menu)
 {
     ui->setupUi(this);
-    ui->StartButton->setFocusPolicy(Qt::NoFocus);
+    //ui->StartButton->setFocusPolicy(Qt::NoFocus);
+
+    background = new QMovie(":/images/menu.gif");
+    ui->backgroundlabel->setMovie(background);
+    background->start();
 }
 
 Menu::~Menu()
@@ -17,7 +21,13 @@ Menu::~Menu()
 }
 
 
+
 void Menu::on_StartButton_clicked()
 {
     game->show();
+}
+
+void Menu::on_ExitButton_clicked()
+{
+
 }

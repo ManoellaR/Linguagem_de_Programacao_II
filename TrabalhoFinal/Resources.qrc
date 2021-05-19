@@ -7,6 +7,22 @@
         <file>Heart3.png</file>
         <file>Bullet.png</file>
         <file>Cursor_crosshair.png</file>
+        <file>HealthKit1.png</file>
+        <file>HealthKit2.png</file>
+        <file>HealthKit3.png</file>
+        <file>HealthKit4.png</file>
+        <file>HealthKit5.png</file>
+        <file>ammo1.png</file>
+        <file>ammo2.png</file>
+        <file>ammo3.png</file>
+        <file>ammo4.png</file>
+        <file>ammo5.png</file>
+        <file>menu.gif</file>
+        <file>playButton.png</file>
+        <file>playButtonPressed.png</file>
+        <file>exitButton.png</file>
+        <file>exitButtonPressed.png</file>
+        <file>gameover.gif</file>
     </qresource>
     <qresource prefix="/player-animations">
         <file>idle-right1.png</file>
@@ -137,6 +153,9 @@
         <file>shoot-up1.png</file>
         <file>shoot-up2.png</file>
         <file>shoot-up3.png</file>
+        <file>hit1.png</file>
+        <file>hit2.png</file>
+        <file>hit3.png</file>
     </qresource>
     <qresource prefix="/zombie-animations">
         <file>zombie1-attack-left1.png</file>

@@ -119,6 +119,7 @@ void Player::animation()
     if(action == "run") frameMax = 8;
     if(action == "run-shoot") frameMax = 8;
     if(action == "shoot") frameMax = 3;
+    if(action == "hit") frameMax = 3;
     if((game->lineAngle >= -45) || (game->lineAngle < -315)){
         if(frame > frameMax) frame = 1;
         sprite = ":/player-animations/" + action + "-right" + QString::number(frame) + ".png";
@@ -144,12 +145,15 @@ void Player::animation()
         frame ++;
     }
     if(action == "death"){
-        sprite = ":/player-animations/" + action + "-down" + QString::number(frame) + ".png";
+        sprite = ":/player-animations/" + action + QString::number(frame) + ".png";
         setPixmap(sprite);
         frame ++;
-        if(frame > 8){
-
-        }
+    }
+    if(action == "hit"){
+        if(frame > frameMax) frame = 1;
+        sprite = ":/player-animations/" + action + QString::number(frame) + ".png";
+        setPixmap(sprite);
+        frame ++;
     }
 }
 

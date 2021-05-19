@@ -52,6 +52,7 @@ void Zombie::move()
     for(int i = 0, n = colliding_item.size(); i < n; i++){
         if(typeid(*(colliding_item[i]))== typeid(Player)){
             action = "attack";
+            game->player->action = "hit";
             game->health->decrease();
             scene()->removeItem(this);
             delete timer;

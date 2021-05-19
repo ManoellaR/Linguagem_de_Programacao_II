@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -23,7 +24,9 @@ class Ui_Menu
 {
 public:
     QWidget *centralwidget;
+    QLabel *backgroundlabel;
     QPushButton *StartButton;
+    QPushButton *ExitButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -31,16 +34,42 @@ public:
     {
         if (Menu->objectName().isEmpty())
             Menu->setObjectName(QString::fromUtf8("Menu"));
-        Menu->resize(800, 600);
+        Menu->resize(640, 360);
+        Menu->setMinimumSize(QSize(640, 360));
+        Menu->setMaximumSize(QSize(640, 360));
         centralwidget = new QWidget(Menu);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        backgroundlabel = new QLabel(centralwidget);
+        backgroundlabel->setObjectName(QString::fromUtf8("backgroundlabel"));
+        backgroundlabel->setGeometry(QRect(0, 0, 640, 360));
         StartButton = new QPushButton(centralwidget);
         StartButton->setObjectName(QString::fromUtf8("StartButton"));
-        StartButton->setGeometry(QRect(310, 200, 80, 25));
+        StartButton->setGeometry(QRect(272, 160, 101, 41));
+        StartButton->setStyleSheet(QString::fromUtf8("QPushButton#StartButton {\n"
+"background-color: transparent;\n"
+"background-image: url(:/images/playButton.png);\n"
+"border-image: none;\n"
+"}\n"
+"\n"
+"QPushButton#StartButton:pressed {\n"
+"    background-image: url(:/images/playButtonPressed.png);\n"
+"}"));
+        ExitButton = new QPushButton(centralwidget);
+        ExitButton->setObjectName(QString::fromUtf8("ExitButton"));
+        ExitButton->setGeometry(QRect(272, 224, 101, 41));
+        ExitButton->setStyleSheet(QString::fromUtf8("QPushButton#StartButton {\n"
+"background-color: transparent;\n"
+"background-image: url(:/images/exitButton.png);\n"
+"border-image: none;\n"
+"}\n"
+"\n"
+"QPushButton#StartButton:pressed {\n"
+"    background-image: url(:/images/exitButtonPressed.png);\n"
+"}"));
         Menu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Menu);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menubar->setGeometry(QRect(0, 0, 640, 25));
         Menu->setMenuBar(menubar);
         statusbar = new QStatusBar(Menu);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -54,7 +83,9 @@ public:
     void retranslateUi(QMainWindow *Menu)
     {
         Menu->setWindowTitle(QCoreApplication::translate("Menu", "Menu", nullptr));
-        StartButton->setText(QCoreApplication::translate("Menu", "Start", nullptr));
+        backgroundlabel->setText(QString());
+        StartButton->setText(QString());
+        ExitButton->setText(QString());
     } // retranslateUi
 
 };

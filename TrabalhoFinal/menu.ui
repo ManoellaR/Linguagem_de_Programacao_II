@@ -6,25 +6,61 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>640</width>
+    <height>360</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>640</width>
+    <height>360</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Menu</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="StartButton">
+   <widget class="QLabel" name="backgroundlabel">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>200</y>
-      <width>80</width>
-      <height>25</height>
+      <x>0</x>
+      <y>0</y>
+      <width>640</width>
+      <height>360</height>
      </rect>
     </property>
     <property name="text">
-     <string>Start</string>
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StartButton">
+    <property name="geometry">
+     <rect>
+      <x>272</x>
+      <y>160</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#StartButton {
+background-color: transparent;
+background-image: url(:/images/playButton.png);
+border-image: none;
+}
+
+QPushButton#StartButton:pressed {
+    background-image: url(:/images/playButtonPressed.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -33,7 +69,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>640</width>
      <height>25</height>
     </rect>
    </property>

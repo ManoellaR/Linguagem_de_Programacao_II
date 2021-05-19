@@ -8,13 +8,13 @@ AmmoCount::AmmoCount()
 {
     ammoCount = 25;
     ammoTotal = 75;
-    setPlainText(QString("Ammo: ") + QString::number(ammoCount) + QString("/") + QString::number(ammoTotal));
+    setPlainText(QString::number(ammoCount) + QString("/") + QString::number(ammoTotal));
     setDefaultTextColor(Qt::yellow);
     setFont(QFont("times",16));
 
     spawnTimer = new QTimer();
     connect(spawnTimer, SIGNAL(timeout()), this, SLOT(spawnAmmo()));
-    spawnTimer->start(60000);
+    spawnTimer->start(30000);
 }
 
 void AmmoCount::reload()
